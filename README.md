@@ -42,7 +42,9 @@ This project combines **clean JavaScript logic** with **aesthetic UI design**, i
 The app is designed to feel like:
 
 > ☁️ A calm Ghibli-style matcha café
+
 > 🌿 Soft colours + subtle motion
+
 > 🍵 Relaxing and aesthetic experience
 
 ---
