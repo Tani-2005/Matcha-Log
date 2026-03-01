@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ghibli Matcha Log</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- RANDOM PETALS -->
+<div class="petals">
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<div class="container">
+
+<h1>🍵 Ghibli Matcha Log</h1>
+
+<!-- TEA SCENE -->
+<div class="scene">
+
+  <div class="steam steam1"></div>
+  <div class="steam steam2"></div>
+  <div class="steam steam3"></div>
+
+  <div class="cup">
+    <div class="tea"></div>
+    <div class="handle"></div>
+  </div>
+
+  <div class="shadow"></div>
+
+</div>
+
+<!-- FORM -->
+<div class="form glass">
+  <input id="name" placeholder="Matcha Name">
+  <input id="brand" placeholder="Brand">
+  <input id="rating" type="number" min="1" max="5" placeholder="Rating (1-5)">
+  <button onclick="addMatcha()">✨ Add</button>
+</div>
+
+<div class="controls glass">
+  <select id="sortSelect" onchange="sortMatcha()">
+    <option value="date">Newest</option>
+    <option value="ratingHigh">Rating High → Low</option>
+    <option value="ratingLow">Rating Low → High</option>
+    <option value="name">Name A → Z</option>
+  </select>
+</div>
+
+<div id="matchaList" class="cards"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

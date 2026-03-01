@@ -1,0 +1,263 @@
+/* ===== GLOBAL ===== */
+
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(160deg,#e9f7e8,#fffdf8);
+  overflow-x:hidden;
+}
+
+.container{
+  max-width:850px;
+  margin:auto;
+  padding:30px;
+  position:relative;
+  z-index:2;
+}
+
+h1{
+  text-align:center;
+  color:#305c35;
+}
+
+/* ===== GLASS EFFECT ===== */
+
+.glass{
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.4);
+}
+
+/* ===== RANDOM PETALS ===== */
+
+.petals{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:1;
+}
+
+.petals span{
+  position:absolute;
+  display:block;
+  font-size:20px;
+  animation:fall linear infinite;
+  opacity:0.8;
+}
+
+.petals span::before{
+  content:"🌸";
+}
+
+.petals span:nth-child(1){left:5%;animation-duration:8s;animation-delay:0s;}
+.petals span:nth-child(2){left:12%;animation-duration:10s;animation-delay:2s;}
+.petals span:nth-child(3){left:20%;animation-duration:7s;animation-delay:4s;}
+.petals span:nth-child(4){left:28%;animation-duration:11s;animation-delay:1s;}
+.petals span:nth-child(5){left:36%;animation-duration:9s;animation-delay:3s;}
+.petals span:nth-child(6){left:44%;animation-duration:12s;animation-delay:0s;}
+.petals span:nth-child(7){left:52%;animation-duration:8s;animation-delay:5s;}
+.petals span:nth-child(8){left:60%;animation-duration:10s;animation-delay:2s;}
+.petals span:nth-child(9){left:68%;animation-duration:9s;animation-delay:4s;}
+.petals span:nth-child(10){left:76%;animation-duration:7s;animation-delay:1s;}
+.petals span:nth-child(11){left:82%;animation-duration:11s;animation-delay:3s;}
+.petals span:nth-child(12){left:88%;animation-duration:9s;animation-delay:0s;}
+.petals span:nth-child(13){left:93%;animation-duration:8s;animation-delay:2s;}
+.petals span:nth-child(14){left:15%;animation-duration:13s;animation-delay:6s;}
+.petals span:nth-child(15){left:70%;animation-duration:12s;animation-delay:4s;}
+
+@keyframes fall{
+  0%{
+    top:-10%;
+    transform:translateX(0) rotate(0deg);
+    opacity:0;
+  }
+  10%{opacity:0.9;}
+  50%{transform:translateX(30px) rotate(120deg);}
+  100%{
+    top:110%;
+    transform:translateX(-40px) rotate(360deg);
+    opacity:0;
+  }
+}
+
+/* ===== GHIBLI CUP ===== */
+
+.scene{
+  position:relative;
+  width:250px;
+  height:220px;
+  margin:20px auto 40px;
+  animation:floatScene 5s ease-in-out infinite;
+}
+
+.cup{
+  width:160px;
+  height:110px;
+  margin:auto;
+  background:#fffdf7;
+  border-radius:0 0 70px 70px;
+  border:3px solid #ece4d8;
+  overflow:hidden;
+  box-shadow:0 8px 25px rgba(0,0,0,.15);
+  position:relative;
+}
+
+.tea{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:55%;
+  background:linear-gradient(to top,#6fb565,#a4d892);
+  animation:ripple 3s ease-in-out infinite;
+}
+
+.handle{
+  position:absolute;
+  right:-30px;
+  top:30px;
+  width:35px;
+  height:48px;
+  border:6px solid #eee3d4;
+  border-left:none;
+  border-radius:50%;
+}
+
+.shadow{
+  width:180px;
+  height:20px;
+  background:rgba(0,0,0,.15);
+  border-radius:50%;
+  margin:10px auto;
+  filter:blur(5px);
+  animation:shadowMove 5s ease-in-out infinite;
+}
+
+/* STEAM */
+
+.steam{
+  position:absolute;
+  width:25px;
+  height:90px;
+  filter:blur(6px);
+}
+
+.steam::before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(255,255,255,.7);
+  border-radius:50%;
+  animation:steam 4s infinite;
+}
+
+.steam1{left:75px;}
+.steam2{left:110px;animation-delay:1s;}
+.steam3{left:140px;animation-delay:2s;}
+
+/* ===== FORM ===== */
+
+.form{
+  padding:12px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  border-radius:15px;
+}
+
+input{
+  padding:10px;
+  border:none;
+  border-radius:10px;
+  flex:1;
+}
+
+button{
+  padding:10px 16px;
+  border:none;
+  border-radius:10px;
+  background:#68ba6d;
+  color:white;
+  cursor:pointer;
+  transition:.3s;
+}
+
+button:hover{
+  transform:scale(1.05);
+}
+
+.controls{
+  margin-top:15px;
+  padding:10px;
+  border-radius:12px;
+}
+
+select{
+  padding:10px;
+  border:none;
+  border-radius:10px;
+}
+
+/* ===== CARDS ===== */
+
+.cards{
+  margin-top:20px;
+  display:grid;
+  gap:15px;
+}
+
+.card{
+  padding:15px;
+  border-radius:14px;
+  background:rgba(255,255,255,.75);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  animation:cardPop .5s ease;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 20px rgba(0,0,0,.12);
+}
+
+.delete{
+  background:#ff6b6b;
+}
+
+.stars{
+  color:gold;
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes steam{
+  0%{transform:translateY(0) translateX(0) scale(1);opacity:0;}
+  30%{opacity:.7;}
+  100%{transform:translateY(-120px) translateX(15px) scale(1.8);opacity:0;}
+}
+
+@keyframes ripple{
+  0%,100%{transform:translateX(0);}
+  50%{transform:translateX(3px);}
+}
+
+@keyframes floatScene{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-6px);}
+}
+
+@keyframes shadowMove{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(.9);}
+}
+
+@keyframes cardPop{
+  from{opacity:0;transform:scale(.8);}
+  to{opacity:1;transform:scale(1);}
+}
